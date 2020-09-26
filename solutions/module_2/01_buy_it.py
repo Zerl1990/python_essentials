@@ -1,4 +1,4 @@
-wallet = input('Dinero disponible: ')
-cost = input('Costo del producto:')
-print(f'Comprarlo: {wallet >= cost}')
+wallet = input('Money: ')
+cost = input('Cost:')
+print(f'Buy it: {wallet >= cost}')
 
