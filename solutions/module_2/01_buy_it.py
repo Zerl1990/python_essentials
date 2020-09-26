@@ -1,4 +1,4 @@
-wallet = input('Money: ')
-cost = input('Cost:')
-print(f'Buy it: {wallet >= cost}')
-
+wallet = float(input('Money: '))
+cost = float(input('Cost:'))
+result = wallet >= cost
+print(f'Buy it: {result}')

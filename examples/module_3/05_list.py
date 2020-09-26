@@ -17,3 +17,5 @@ del numbers[0]
 print(f'Len: {len(numbers)}')
 
 
+
+
