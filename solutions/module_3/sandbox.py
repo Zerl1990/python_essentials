@@ -31,4 +31,4 @@ while not force_exit:
     elif selected_option == 4:
         force_exit = True
     else:
-        print(f'Please Select a valid option from [0-4], selected {selected_option}')
+        print(f'Please Select a valid option from [1-4], selected {selected_option}')

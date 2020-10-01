@@ -31,7 +31,7 @@ CATALOG = [
 ]
 
 
-SHOPPING_CART = []
+shopping_cart = []
 
 
 # Print menu and control program execution
@@ -44,7 +44,7 @@ def manager():
         elif opt == 2:
             shopping_cart()
         elif opt == 3:
-            billing()
+            paid = billing()
         elif opt == 4:
             invoice(paid)
         elif opt == 5:
