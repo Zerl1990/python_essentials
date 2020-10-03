@@ -31,14 +31,14 @@ CATALOG = [
 ]
 
 
-shopping_cart = []
+shopping_cart_lst = [] # TODO: Issue 1
 
 
 # Print menu and control program execution
 def manager():
+    paid = False  # TODO: Issue 2
     while True:
         opt = int(input(MAIN_MENU))
-        paid = False
         if opt == 1:
             catalog()
         elif opt == 2:
@@ -55,33 +55,53 @@ def manager():
 
 # Print available movies at CATALOG
 def catalog():
-    print('catalog')
+    print('--catalog--')
+    for index, movie in enumerate(CATALOG):
+        print(f'Index: {index}, Name: {movie[0]}, Cost: {movie[1]}')
 
 
 # Select/Remove movies from shopping cart
 def shopping_cart():
-    print('shopping cart')
+    print('--shopping cart--')
     opt = int(input(SHOPPING_CART_MENU))
     if opt == 1:
-        # Add movie to SHOPPING_CART
-        pass
+        index = int(input(f'Select movie index: [0-{len(CATALOG)-1}]'))
+        days = int(input(f'Select number of days: '))
+        movie = CATALOG[index]
+        shopping_cart_lst.append([movie[0], movie[1], days])
     elif opt == 2:
-        # Remove movie by index from SHOPPING_CART
-        pass
+        for index, item in enumerate(shopping_cart_lst):
+            print(f'{index}: {item[0]}')
+        index = int(input(f'Select index to remove: [0-{len(shopping_cart_lst)-1}]'))
+        del shopping_cart_lst[index]
     else:
         print(f'Invalid option: {opt}')
 
 
 # Display total cost for the movies, and ask user if we wants to pay or not
 def billing():
-    print('billing')
-    paid = False
-    return paid
+    print('--billing--')
+    costs = [item[1] * item[2] for item in shopping_cart_lst]
+    answer = input(f'Do you want to pay {sum(costs)}? (yes|no)')
+    if answer == 'yes':
+        return True
+    else:
+        return False
 
 
 # Print more details about selection
 def invoice(paid):
-    print('billing')
+    print('--invoice--')
+    if paid:
+        total = 0
+        print(f"| {'Movie'.center(30)} | {'Days'.center(4)} | {'Cost'.center(4)} | {'Total Cost'.center(10)}")
+        for item in shopping_cart_lst:
+            item_cost = item[1] * item[2]
+            total += item_cost
+            print(f'| {item[0]: <30} | {item[1]: <4} |{item[2]: <4} | {item_cost: <10}')
+        print(f'TOTAL: {total}')
+    else:
+        print("You have to pay first!")
 
 
 manager()
