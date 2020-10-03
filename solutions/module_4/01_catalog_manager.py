@@ -31,7 +31,7 @@ CATALOG = [
 ]
 
 
-shopping_cart_lst = [] # TODO: Issue 1
+shopping_cart_lst = []  # TODO: Issue 1
 
 
 # Print menu and control program execution
@@ -81,12 +81,12 @@ def shopping_cart():
 # Display total cost for the movies, and ask user if we wants to pay or not
 def billing():
     print('--billing--')
+    # Shopping cart
+    # [Name, Cost, Day] -> Cost * Day = total_per_movie
+    # [Name, Cost, Day] -> Cost * Day = total_per_movie
     costs = [item[1] * item[2] for item in shopping_cart_lst]
     answer = input(f'Do you want to pay {sum(costs)}? (yes|no)')
-    if answer == 'yes':
-        return True
-    else:
-        return False
+    return answer == 'yes'
 
 
 # Print more details about selection
