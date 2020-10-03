@@ -1,13 +1,8 @@
 import requests
 
-PROXIES = {
-    "http": "http://www-proxy-adcq7-new.us.oracle.com:80",
-    "https": "https://www-proxy-adcq7-new.us.oracle.com:80"
-}
-
 
 def get_data_set():
-    response = requests.get('http://api.worldbank.org/V2/country?incomeLevel=LIC&format=json', proxies=PROXIES)
+    response = requests.get('http://api.worldbank.org/V2/country?incomeLevel=LIC&format=json')
     return response.json()
 
 
