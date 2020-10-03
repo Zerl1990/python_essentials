@@ -26,6 +26,3 @@ def print_board(board, player, computer):
     tmp.append(f"2 | {board['A2']: <1} | {board['B2']: <1} | {board['C2']: <1} |")
     tmp.append(f"3 | {board['A3']: <1} | {board['B3']: <1} | {board['C3']: <1} |")
     print('\n'.join(tmp))
-
-
-print_board(BOARD, 'X', 'O')
