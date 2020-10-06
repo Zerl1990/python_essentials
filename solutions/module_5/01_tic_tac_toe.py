@@ -35,7 +35,7 @@ def player_move(board, symbol):
     valid_move = False
     while not valid_move:
         coordinate = input('Please select an empty cell:')
-        valid_move = coordinate in board and not board[coordinate]
+        valid_move = (coordinate in board) and (not board[coordinate])
     board[coordinate] = symbol
     return check_winner(board, symbol)
 
@@ -69,10 +69,10 @@ def check_winner(board, symbol):
 
 def __check_columns(board, symbol):
     for column in ['A', 'B', 'C']:
-        a1_cell = board[column + '1']
-        a2_cell = board[column + '2']
-        a3_cell = board[column + '3']
-        if a1_cell == symbol and a2_cell == symbol and a3_cell == symbol:
+        cell_1 = board[column + '1']
+        cell_2 = board[column + '2']
+        cell_3 = board[column + '3']
+        if cell_1 == symbol and cell_2 == symbol and cell_3 == symbol:
             return True
     return False
 
@@ -89,15 +89,16 @@ def __check_rows(board, symbol):
 
 def draw(board):
     empty_cells = [item for item in board.values() if not item]
-    if len(empty_cells):
+    if len(empty_cells) > 0:
         return False
     else:
         print('~~~DRAW~~~')
         return True
 
 
+# MAIN
 player = select_symbol()
-computer = 'O' if player == 'X' else 'X'
+computer = 'O' if player == 'X' else 'X'  # Ternary operator
 while True:
     print_board(BOARD, player, computer)
     if player_move(BOARD, player) or computer_move(BOARD, computer) or draw(BOARD):
