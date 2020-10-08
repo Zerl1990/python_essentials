@@ -14,25 +14,27 @@ class CellPhone:
 
 
 class IPhone(CellPhone):
-    def _init__(self, width, height, processor):
+    def __init__(self, width, height, processor):
         super().__init__(width, height, processor, 'Apple')
+
+    def on(self):
+        self.status = 'ON-IPHONE'
 
 
 class Android(CellPhone):
-    def _init__(self, width, height, processor):
+    def __init__(self, width, height, processor):
         super().__init__(width, height, processor, 'Google')
+
+    def on(self):
+        self.status = 'ON-ANDROID'
 
 
 android = Android(1000, 1200, 4)
 android.on()
-isinstance(android, Android)
+print(android.status)
 
-android2 = android
-if android is android2:
-    print('Same instance')
-
-
-issubclass(CellPhone, IPhone)
-
+iphone = IPhone(1000, 1200, 4)
+iphone.on()
+print(iphone.status)
 
 
