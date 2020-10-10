@@ -58,8 +58,11 @@ class Products:
 
 
 products = Products()
-products.add(Product('Product A', 8))
-products.add(Product('Product A', 23))
+
+prod_1 = Product('Product A', 8)
+prod_2 = Product('Product A', 23)
+products.add(prod_1)
+products.add(prod_2)
 products.add(Product('Product B', 34))
 products.add(Product('Product C', 14))
 products.add(Product('Product D', 2))
@@ -68,7 +71,6 @@ products.add(Product('Product F', 3))
 products.add(Product('Product F', 5))
 
 print(f'Total products: {len(products)}')
-print(products)
 products.sort()
 print('*' * 80)
 print(products)

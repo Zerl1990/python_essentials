@@ -8,3 +8,6 @@ def custom_range(start, end):
 for num in custom_range(0, 10):
     print(num)
 
+
+print(sum(custom_range(3, 10)))
+

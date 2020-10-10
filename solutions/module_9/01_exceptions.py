@@ -14,9 +14,17 @@ def sum_lst(lst, start, end):
     return sum(lst[start:end:])
 
 
-multiple(5, 'adc')
-multiple('dada', 5)
-sum_lst(None, 0, 15)
-sum_lst([1, 2], -1, 1)
-sum_lst([1, 2, 3], 0, 9)
+try:
+    multiple(5, 'adc')
+    multiple('dada', 5)
+    sum_lst(None, 0, 15)
+    sum_lst([1, 2], -1, 1)
+    sum_lst([1, 2, 3], 0, 9)
+except ValueError:
+    print('Invalid error provided')
+except IndexError:
+    print('Invalid index!!!')
+except:
+    print('Unhandle xception')
+
 

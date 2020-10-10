@@ -10,7 +10,7 @@ class MyIterator:
     def __next__(self):
         # Search next number
         while self.value % self.mod != 0:
-            self.value += 1""
+            self.value += 1
 
         # Store number
         tmp = self.value
