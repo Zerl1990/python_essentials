@@ -19,7 +19,6 @@ with open(abs_file_path, 'r') as reader:
                     histogram[word] = 1
 print(histogram)
 
-
 # Histogram graph
 histogram = sorted(histogram.items(), key=lambda x: x[1], reverse=True)
 labels = [item[0] for item in histogram]
