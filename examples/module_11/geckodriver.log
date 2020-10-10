@@ -37,4 +37,19 @@ JavaScript error: resource:///modules/sessionstore/SessionStore.jsm, line 1325: 
 [GPU 17280, Chrome_ChildThrea
 ###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
-d] WARNING: pipe error: 109: file z:/t
+d] WARNING: pipe error: 109: file z:/t1602356096577	geckodriver	INFO	Listening on 127.0.0.1:56895
+1602356099611	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\lmrivas\\AppData\\Local\\Temp\\rust_mozprofileMCLqW0"
+1602356106988	geckodriver	INFO	Listening on 127.0.0.1:56925
+1602356109992	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\lmrivas\\AppData\\Local\\Temp\\rust_mozprofileZuYtjj"
+1602356110999	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1602356110999	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1602356111000	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1602356111000	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: undefined, line 14: Error: An unexpected error occurred
+JavaScript error: moz-extension://2fa329c9-344b-420b-a055-ae888a415d7c/lib/picture_in_picture_overrides.js, line 15: Error: Incorrect argument types for pictureInPictureParent.setOverrides.
+JavaScript error: resource:///modules/sessionstore/SessionStore.jsm, line 1325: uncaught exception: 2147746065
+1602356114387	Marionette	INFO	Listening on port 56933
+1602356114747	Marionette	WARN	TLS certificate errors will be ignored for this session
+1602356114857	Marionette	INFO	Stopped listening on port 56933
+[Parent 18544, Gecko_IOThread] WARNING: pipe error: 109: file z:/task_1588188481/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 348
+[Parent 18544, Gecko_IOThread] WARNING: file z:/task_1588188481/build/src/ipc/chromium/src/base/process_util_win.cc, line 160
