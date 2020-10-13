@@ -6,7 +6,9 @@ NAME = q
 Escribe cualquier búsqueda
 Cierra el navegador
 """
-from .webdriver_factory import create_driver_instance
+from webdriver_factory import create_driver_instance
 
 driver = create_driver_instance('safari')
+
+
 
