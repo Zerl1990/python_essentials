@@ -9,8 +9,10 @@ ROOT_DIR = os.path.dirname(os.path.realpath(__file__))
 CHROME_PATH = os.path.join(ROOT_DIR, 'drivers', 'chromedriver.exe')
 
 chrome_driver = webdriver.Chrome(executable_path=CHROME_PATH)
+chrome_driver.implicitly_wait(10)
 chrome_driver.get('https://www.youtube.com/')
-time.sleep(5)
+
+
 search_text_box = chrome_driver.find_element_by_id('search-container')
 print(f'Search text box displayed: {search_text_box.is_displayed()}')
 print(f'Search text box active: {search_text_box.is_enabled()}')
