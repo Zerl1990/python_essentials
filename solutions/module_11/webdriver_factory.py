@@ -17,7 +17,7 @@ def create_driver_instance(browser_name):
     elif browser_name.lower() == 'firefox':
         firefox_driver = webdriver.Firefox(executable_path=__FIREFOX_PATH)
         firefox_driver.maximize_window()
-        return driver
+        return firefox_driver
     else:
         raise ValueError('Invalid browser selected!')
 
