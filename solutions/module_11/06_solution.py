@@ -23,9 +23,10 @@ email = driver.find_element_by_id('email')
 password = driver.find_element_by_id('pass')
 submit_btn = driver.find_element_by_name('login')
 
-email.send_keys('qa_minds@oracle.com')
+# driver -> WebDriver: Automatizar el navegador
+# email -> WebElement: Automatizar un elemento especifico
+email.send_keys('qa_minds@gmail.com')
 password.send_keys('testing')
 submit_btn.click()
 time.sleep(5)
-
 driver.quit()
