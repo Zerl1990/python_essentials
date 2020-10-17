@@ -44,7 +44,7 @@ print(hist)
 
 # P slicing
 print('*' * 80)
-print('P between 2-13, step 4')
+print('P between 2-12, step 4')
 for item in p_list[2:13:4]:
     print(f'\t{item.text}')
 
