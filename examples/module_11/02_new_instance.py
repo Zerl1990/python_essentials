@@ -15,3 +15,6 @@ chrome_driver.close()
 # Chrome browser
 firefox_driver = webdriver.Firefox(executable_path=FIREFOX_PATH)
 firefox_driver.close()
+firefox_driver.implicitly_wait()
+firefox_driver.find_element_by_link_text()
+firefox_driver.find_element_()

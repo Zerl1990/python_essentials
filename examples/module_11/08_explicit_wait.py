@@ -10,8 +10,10 @@ ROOT_DIR = os.path.dirname(os.path.realpath(__file__))
 CHROME_PATH = os.path.join(ROOT_DIR, 'drivers', 'chromedriver.exe')
 
 driver = webdriver.Chrome(executable_path=CHROME_PATH)
-wait = WebDriverWait(driver, 10)
 driver.get('https://www.amazon.com.mx/')
-wait.until(EC.visibility_of_element_located((By.ID, 'searchDropdownBox')))
+# NO IMPLICIT WAIT - 0
+
+wait = WebDriverWait(driver, 10)
+dropdown = wait.until(EC.visibility_of_element_located((By.ID, 'searchDropdownBox')))
 wait.until(EC.element_to_be_clickable((By.ID, 'searchDropdownBox')))
 wait.until(EC.presence_of_element_located((By.ID, 'nav-search-submit-text')))

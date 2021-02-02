@@ -9,18 +9,18 @@ ROOT_DIR = os.path.dirname(os.path.realpath(__file__))
 CHROME_PATH = os.path.join(ROOT_DIR, 'drivers', 'chromedriver.exe')
 
 driver = webdriver.Chrome(executable_path=CHROME_PATH)
+wait = WebDriverWait(driver, 10)
+driver.get('https://www.netflix.com/')
 
-driver.implicitly_wait(0)
-driver.get('https://www.amazon.com.mx/')
+# Landing Page
+sign_in_link = wait.until(EC.element_to_be_clickable((By.LINK_TEXT, 'Sign In')))
+sign_in_link.click()
 
-print('A Elements:')
-a_lst = driver.find_elements_by_xpath('//a')
-for index, element in enumerate(a_lst):
-    print(f"\t[{index}] - {element.text} - {element.get_attribute('href')}")
 
-print('Head child elements:')
-head_child = driver.find_elements_by_xpath('//head/*')
-for index, element in enumerate(head_child):
-    print(f"\t[{index}] - {element.text} - {element.get_attribute('href')}")
-
+# Login From
+email = wait.until(EC.element_to_be_clickable((By.ID, 'id_userLoginId')))
+password = wait.until(EC.element_to_be_clickable((By.ID, 'id_password')))
+sign_in = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[contains(@class, 'login-button')]")))
+email.send_keys('test@gmail.com')
+password.send_keys('test')
 driver.quit()

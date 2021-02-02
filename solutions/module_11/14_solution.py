@@ -9,6 +9,7 @@ Imprime el elemento seleccionado actualmente
 Selecciona el elemento con el índice 0
 Selecciona el elemento con el texto Auto
 """
+import sys
 from solutions.module_11.webdriver_factory import create_driver_instance
 from selenium.webdriver.support.ui import Select
 
@@ -21,6 +22,7 @@ dropdown = Select(driver.find_element_by_id('searchDropdownBox'))
 
 print('*' * 80)
 print('Dropdown options')
+# List - [WebElement, WebElement, WebElement]
 for index, option in enumerate(dropdown.options):
     print(f'\t{index}: {option.text}')
 
